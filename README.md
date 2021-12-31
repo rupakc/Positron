@@ -3,7 +3,7 @@ An app for fetching current news in real time and evaluating its sentiment
 
 ![architecture image][logo]
 
-[logo]: https://git.corp.adobe.com/rupachak/Positron/blob/master/static/resources/positron-architecture.png "System Data Flow"
+[logo]: https://github.com/rupakc/Positron/blob/main/static/resources/positron-architecture.png "System Data Flow"
 
 ## System Architecture
 
