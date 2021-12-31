@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Positron-A Dose of Positivity in the midst of Pandemic</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" media="screen" href ="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" media="screen" href ="{{ url_for('static', filename='css/loader_design.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/top_arrow.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jqcloud.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icon.css') }}">
+    <link rel="shortcut icon" type="image/png" href= "{{ url_for('static', filename='resources/proton.png') }}">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="color:#fff">
+                <span id="main-header-icon"></span>
+                <span>
+                    <span style="margin-left:50px;height:100%;font-size:150%">
+                              Positron
+                    </span>
+                </span>
+            </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title">A Breeze of Positivity in the midst of the Pandemic</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="thumbnail" style="width:auto;height:550px">
+                            <img src="/static/resources/positron-architecture.png" style="width:auto;height:500px">
+                        </div>
+                        <h2> System Architecture </h2>
+                        <hr>
+                        <p>The system is built to fetch news from thousands of news servers in real-time. By default it will fetch the news from <b> news.org API </b> and <b> current news API </b>. After collecting and parsing the news, it will perform sentiment analysis on the news. For each news article it will use the title and article description in order to determine its sentiment. Once this is done, it will pass this to the front-end for displaying and rendering.
+                            Backend uses <b> Flask server </b> and Python, the UI is built using <b> Bootstrap, JQuery and Javascript. </b>
+                        </p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav">
+                <li><a data-toggle="modal" data-target="#myModal" style="cursor:pointer;">About the App</a></li>
+            </ul>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+
+    <div id="divLoading" style="display:none">
+
+    </div>
+
+    <!-- Return to Top -->
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+<script type="text/javascript" src="//code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" src="//code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript" src="//code.highcharts.com/modules/export-data.js"></script>
+<script type="text/javascript" src="//code.highcharts.com/modules/wordcloud.js"></script>
+<script type="text/javascript" src="//code.highcharts.com/stock/highstock.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/table_color.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/highlight_tab.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/back_top_arrow.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jQuery.succinct.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/shorten.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/loader.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/summarize.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/stopwords.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqcloud.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/wordcloudgen.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/visualcontroller.js') }}"></script>
+<!-- <script type="text/javascript" src="{{ url_for('static', filename='js/toast_alert.js') }}"></script> -->
+</html>

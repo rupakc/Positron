@@ -1,0 +1,7 @@
+requests
+pandas
+daiquiri
+wtforms
+newsapi
+vaderSentiment
+flask

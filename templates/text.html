@@ -1,0 +1,63 @@
+{% extends "base_format.html" %}
+{% block content %}
+         <br/><br/>
+        <form action="" method="post" role="form">
+            {{ form.csrf }}
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="search_term" name="search_term" placeholder="Type a search term">
+            </div>
+            <div class="form-inline">
+                <div class="text-center">
+                    <select class="selectpicker" multiple title="Choose a News Data Source" name="news_data_sources" id="news_data_sources">
+                        {% for i in form.news_data_sources.choices %}
+                            <option value="{{i[0]}}">{{i[1]}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <select class="selectpicker" name="prediction_dropdown" id="prediction_dropdown" multiple title="Choose a Type of Sentiment">
+                        {% for i in form.prediction_dropdown.choices %}
+                            <option value="{{i[0]}}">{{i[1]}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Search</button>
+            </div>
+        </form>
+        <br/>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                 <div class="panel-group" id="accordion">
+                 {% for message in messages %}
+                    {% for element in message[1] %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#{{element[0]|safe}}">
+                                    <span>{{element[0]|safe}}</span>
+                                </a>
+                            </h4>
+                        </div>
+                    <div id="{{element[0]|safe}}" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <div class="page">
+                                    <div class="text-center">
+                                        {{element[1]|safe}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                          {% endfor %}
+                     {% endfor %}
+                {% endif %}
+        {% endwith %}
+                </div>
+
+{% endblock %}
